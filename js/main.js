@@ -20,6 +20,20 @@ fermerModale.addEventListener("click", function () {
     formTransaction.reset();
 });
 
+let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+transactions.forEach(transaction => {
+    const card = document.createElement("div");
+    card.classList.add("col");
+    card.innerHTML = `
+  <div class="card p-3 shadow-sm  ${transaction.type === 'revenu' ? 'bg-success text-white' : 'bg-danger text-white'}">
+    <h5>${transaction.description}</h5>
+    <p>Montant : ${transaction.montant} DH</p>
+    <p>Date : ${transaction.date}</p>
+   </div>
+    `;
+    transactionscontainer.appendChild(card);
+});
+
 formTransaction.addEventListener("submit", function (e) {
     e.preventDefault();
     const transaction = {
@@ -30,5 +44,22 @@ formTransaction.addEventListener("submit", function (e) {
     };
     const card = document.createElement("div");
     card.classList.add("col");
+    card.innerHTML = `
+  <div class="card p-3 shadow-sm  ${transaction.type === 'revenu' ? 'bg-success text-white' : 'bg-danger text-white'}">
+    <h5>${transaction.description}</h5>
+    <p>Montant : ${transaction.montant} DH</p>
+    <p>Date : ${transaction.date}</p>
+   </div>
+    `;
+    transactionscontainer.appendChild(card);
+
+    maModale.classList.add("d-none");
+    pageContent.classList.remove("blur-bg");
+    header.classList.remove("blur-bg");
+    formTransaction.reset();
+    let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+    transactions.push(transaction);
+    localStorage.setItem("transactions", JSON.stringify(transactions));
     console.log(transaction);
+
 })
