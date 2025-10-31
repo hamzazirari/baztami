@@ -22,12 +22,12 @@
         </section>
     </header>
     <main class="container my-5">
-        <section class="row text-center">
+        <section id="pageContent" class="row text-center">
             <div class="col mb-3 ms-5">
                 <div class="card shadow-lg bg-success" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title text-white">Total des revenus</h5>
-                        
+
                         <p class="card-text text-white">DH</p>
                     </div>
                 </div>
@@ -36,7 +36,7 @@
                 <div class="card shadow-lg  bg-body-secondary" style="width: 18rem;">
                     <div class="card-body">
                         <h5 class="card-title">Solde net</h5>
-                        
+
                         <p class="card-text">DH</p>
                     </div>
                 </div>
@@ -53,40 +53,32 @@
 
         </section>
 
+        <div id="btnPlus" class="d-grid col-6 mx-auto mt-5">
+            <button class="btn btn-outline-primary" type="button">Ajouter une transaction ➕</button>
+        </div>
+        <div id="maModale" class="d-none">
+            <div class="card p-3">
+                <div class="d-flex justify-content-between">
+                    <h5>Ajouter une transaction</h5>
+                    <span id="fermerModale" style="cursor:pointer">&times;</span>
+                </div>
+                <form>
+                    <input type="text" placeholder="Description" class="form-control mb-2">
+                    <input type="number" placeholder="Montant" class="form-control mb-2">
+                    <select class="form-select mb-2">
+                        <option value="revenu">Revenu</option>
+                        <option value="depense">Dépense</option>
+                    </select>
+                    <input type="date" class="form-control mb-2">
+                    <button type="submit" class="btn btn-success w-100">Ajouter</button>
+                </form>
+            </div>
+        </div>
+
 
     </main>
 
 
-
-    <section class="">
-  <!-- Footer -->
-  <footer class="text-center text-white" style="background-color: #111110;">
-    <!-- Grid container -->
-     <img src="image/logobaztami.png" alt="" class="img-fluid mx-5 mt-4"
-                    style="width: 170px; height: 170px;">
-    <div class="container p-4 pb-0">
-      <!-- Section: CTA -->
-      <section class="">
-        <p class="d-flex justify-content-center align-items-center">
-          <span class="me-3">Register for free</span>
-          <button data-mdb-ripple-init type="button" class="btn btn-outline-light btn-rounded">
-            Sign up!
-          </button>
-        </p>
-      </section>
-      <!-- Section: CTA -->
-    </div>
-    <!-- Grid container -->
-
-    
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-      © 2020 Copyright:
-      
-    </div>
-    <!-- Copyright -->
-  </footer>
-  <!-- Footer -->
-</section>
     <script src="js/main.js"></script>
 </body>
 
